@@ -5,4 +5,4 @@ To use this tool:
 
 1. use moveUFW.sh to pull the UFW.log file and create UFW.txt
 
-2. run LogAnalyzer.py to pull useful data from UFW.txt and put it in <date>output.txt
+2. run LogAnalyzer.py to pull useful data from UFW.txt and put it in output[date].txt
