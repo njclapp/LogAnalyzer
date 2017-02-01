@@ -15,9 +15,10 @@ f.close()
 #Write output file
 f = open('output.txt', 'w')
 i = 0
+formatting = "{0:15s}		{1:15}		{2:5}"
 while date != '':
 	try:
-		f.write(date[i]+'\t'+IP[i]+'\t'+DPT[i]+'\n\n')
+		f.write(formatting.format(date[i], IP[i], DPT[i])+'\n')
 		i+=1
 	except IndexError:
 		print("Done.")
