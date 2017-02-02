@@ -7,7 +7,7 @@ import datetime
 with open('ufw.txt', 'r') as f: #opens file as f and is used to loop through file
 	line = f.read()
 	date = re.findall('\w\w\w\s{1,}\d{1,}\s\d\d:\d\d:\d\d', line, flags = 0)
-	IP = re.findall('SRC=(\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3})', line, flags = 0) #[^\192] is used to specifically ignore IPs beginning with 192
+	IP = re.findall('SRC=(\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3})', line, flags = 0)
 	DPT = re.findall('DPT=(\d{1,5})', line, flags = 0)
 
 #Write output file
