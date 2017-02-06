@@ -2,6 +2,10 @@
 #Log Analyzer for UFW.log files
 import re
 import datetime
+import subprocess
+
+#grep ufw.log for blocked IP addresses
+subprocess.call(['sh', 'moveUFW.sh'])
 
 #loop through file for Date/Time, source IP(SRC),  and port scanned(DPT)
 with open('ufw.txt', 'r') as f: #opens file as f and is used to loop through file
