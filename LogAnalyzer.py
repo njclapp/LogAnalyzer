@@ -15,7 +15,8 @@ with open('ufw.txt', 'r') as f: #opens file as f and is used to loop through fil
 	DPT = re.findall('DPT=(\d{1,5})', line, flags = 0)
 
 #Write output file
-filestring = 'output'+str(datetime.date.today().strftime("%Y%m%d"))+'.txt' #automatically includes current date in filename
+yesterday = datetime.datetime.now() - datetime.timedelta(days=1) #since the cron is set for midnight, we have to subtract one day to make the log fit the date
+filestring = 'output'+str(yesterday.strftime("%Y%m%d"))+'.txt' #automatically includes current date in filename
 formatting = "{0:15s}		{1:15}		{2:5}" #spaces out date, IP, and DPT to make the output look nice
 
 f = open(filestring, 'w')
