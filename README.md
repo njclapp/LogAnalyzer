@@ -3,6 +3,7 @@ This script is used to pull a ufw.log file and analyze it to show frequent offen
 
 To use this tool:
 
-1. use moveUFW.sh to pull the UFW.log file and create UFW.txt
+1. use root crontab to run this program at midnight: 0 0 * * * cd /home/$USER/LogAnalyzer && python /home/$USER/LogAnalyzer/LogAnalyzer.py
+   (change $USER to your username)
 
-2. run LogAnalyzer.py to pull useful data from UFW.txt and put it in output[date].txt
+2. crontab will run LogAnalyzer.py to pull useful data from UFW.txt and put it in output[date].txt, while also clearing ufw.log
