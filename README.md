@@ -1,7 +1,7 @@
 # LogAnalyzer.py
 This script is used to pull a ufw.log file and analyze it to show frequent offender IP addresses and ports scanned.
 
-To use this tool:
+## To Use:
 
 1. use root crontab to run this program at midnight: 0 0 * * * cd /home/$USER/LogAnalyzer && python /home/$USER/LogAnalyzer/LogAnalyzer.py
    (change $USER to your username)
