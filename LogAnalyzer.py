@@ -8,6 +8,7 @@ import subprocess
 w = open("ufw.txt","w")
 subprocess.call(['grep BLOCK /var/log/ufw.log'], stdout=w, shell=True)
 subprocess.call(['rm', '/var/log/ufw.log'])
+subprocess.call(['mv', '/home/nate/LogAnalyzer/output*', '/home/nate/LogAnalyzer/reports/'])
 
 #loop through file for Date/Time, source IP(SRC),  and port scanned(DPT)
 with open('ufw.txt', 'r') as f: #opens file as f and is used to loop through file
