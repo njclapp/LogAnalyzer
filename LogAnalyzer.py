@@ -7,7 +7,7 @@ import subprocess
 #grep ufw.log for blocked IP addresses
 w = open("ufw.txt","w")
 subprocess.call(['grep BLOCK /var/log/ufw.log'], stdout=w, shell=True)
-subprocess.call(['rm', '/var/log/ufw.log'])
+subprocess.call(['>', '/var/log/ufw.log'], shell=True)
 subprocess.call('mv output* reports/', shell=True)
 
 #loop through file for Date/Time, source IP(SRC),  and port scanned(DPT)
