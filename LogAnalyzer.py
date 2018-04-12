@@ -8,21 +8,6 @@ import subprocess
 import os
 
 # Attempt to move any previous output files to reports directory
-try:
-	os.stat('reports/')
-	subprocess.call('mv output* reports/', shell=True)
-except OSError:
-	os.mkdir('reports')
-
-# Essentially greps any line that says BLOCK and places it in ufw.txt
-with open('ufw.txt', 'w') as w:
-	for line in open("/var/log/ufw.log","r"):
-		if 'BLOCK' in line:
-			w.write(line)
-
-# To clear ufw.log each night
-open('/var/log/ufw.log','w').close() 
-
 #loop through file for Date/Time, source IP(SRC), and port scanned(DPT)
 with open('ufw.txt', 'r') as f: #opens file as f and is used to loop through file
 	line = f.read()
